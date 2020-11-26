@@ -30,11 +30,43 @@ yarn install array-expire
   
 
 ## Import module
-Comming soon
+```js
+const ArrayExpire = require('array-expire');
+```
+or
+```js
+import ArrayExpire from 'array-expire';
+```
   
 
 ## Usage
-Comming soon
+```js
+const ArreyExpire = require('array-expire')
+
+const arr = new ArreyExpire(1000 * 10)
+
+// Add elements to the array using .push()
+arr.push(1)
+
+// Retrive all elements from the array
+console.log(JSON.stringify(arr)); // => [1]
+
+setTimeout(() => {
+    // after 5 seconds
+    arr.push(2)
+    console.log(JSON.stringify(arr)) // outputs: [1,2]
+}, 1000 * 5)
+
+setTimeout(() => {
+    // after 11 seconds
+    console.log(JSON.stringify(arr)) // outputs: [2]
+}, 1000 * 11)
+
+setTimeout(() => {
+    // after 16 seconds
+    console.log(JSON.stringify(arr)) // outputs: []
+}, 1000 * 16)
+```
   
 
 ## Build

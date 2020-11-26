@@ -26,8 +26,8 @@ export default class ArrayExpire extends Array {
   gc(): void {
     const now = Date.now();
     while (this.times.length && this.times[0] < now) {
-      this.shift();
       this.times.shift();
+      super.shift();
     }
     this.nextGC = null;
     this.scheduleGC();

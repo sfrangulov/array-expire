@@ -2,7 +2,7 @@
   "name": "array-expire",
   "description": "An array that removes each element after a given timeout.",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -cw",
